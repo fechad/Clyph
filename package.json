@@ -1,0 +1,19 @@
+{
+  "name": "chatbotcmd",
+  "version": "1.0.0",
+  "description": "A simple chat interface though cmd. Chat with your desired LLM and more.",
+  "main": "chat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --outDir ./dist",
+    "start": "node ./dist/chat.js",
+    "dev": "tsc --watch"
+  },
+  "author": "Fedwin Chatelier",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "tsc": "^2.0.4",
+    "typescript": "^5.8.3"
+  }
+}
