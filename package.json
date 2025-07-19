@@ -1,19 +1,50 @@
 {
-  "name": "chatbotcmd",
-  "version": "1.0.0",
-  "description": "A simple chat interface though cmd. Chat with your desired LLM and more.",
-  "main": "chat.js",
+  "name": "clyph",
+  "version": "0.1.0",
+  "description": "A simple chat interface though cmd. Chat with your desired LLM and more. From anywhere in your terminal.",
+  "keywords": [
+    "chat",
+    "cli",
+    "command line",
+    "llm",
+    "openai",
+    "chatgpt",
+    "chatbot",
+    "chat-cli",
+    "chat-cli-tool",
+    "chat-cli-app",
+    "chat-cli-toolkit",
+    "chat-cli-application",
+    "chat-cli-interface",
+    "chat-cli-utility",
+    "chat-cli-framework",
+    "chat-cli-solution",
+    "chat-cli-system",
+    "chat-cli-platform",
+    "chat-cli-service",
+    "chat-cli-engine",
+    "chat-cli-library"
+  ],
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --outDir ./dist",
-    "start": "node ./dist/chat.js",
+    "start": "node ./dist/main.js",
     "dev": "tsc --watch"
   },
   "author": "Fedwin Chatelier",
   "license": "MIT",
+  "bin": {
+    "clyph": "./dist/main.js"
+  },
   "dependencies": {
+    "axios": "^1.10.0",
     "dotenv": "^16.5.0",
-    "tsc": "^2.0.4",
+    "langchain": "^0.3.30",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
     "typescript": "^5.8.3"
   }
 }
