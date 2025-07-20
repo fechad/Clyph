@@ -24,7 +24,7 @@ export class Agent {
         "Adapter is not set. Please set an adapter before asking."
       );
     }
-    console.log("Asking LLM with query:", query);
+    // console.log("Asking LLM with query:", query);
     try {
       for await (const chunk of this.adapter.stream(query)) {
         yield chunk;

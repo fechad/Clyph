@@ -58,8 +58,8 @@ export class Process {
           defaultInput: "gpt-4o-mini",
         }) || "gpt-4o-mini";
     }
-    // Save to .env in cwd (works globally)
-    const envPath = path.join(process.cwd(), ".env");
+    // Save to .env in package root, next to package.json
+    const envPath = path.resolve(__dirname, "..", "..", ".env");
     let envContent = "";
     if (fs.existsSync(envPath)) {
       envContent = fs.readFileSync(envPath, "utf8");
@@ -253,7 +253,8 @@ export class Process {
                 this.configs[key] = value;
                 process.env[key.toUpperCase()] = value;
                 // Update .env file
-                const envPath = path.join(process.cwd(), ".env");
+                // const envPath = path.join(process.cwd(), ".env");
+                const envPath = path.resolve(__dirname, "..", "..", ".env");
                 let envContent = fs.existsSync(envPath)
                   ? fs.readFileSync(envPath, "utf8")
                   : "";

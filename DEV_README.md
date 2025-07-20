@@ -130,7 +130,38 @@ npm publish --access public
 
 ---
 
-## 5. Install Globally (for users)
+## 5. Publish -  test
+
+To publish the package in a local test Verdaccio registry:
+```sh
+npm install --global verdaccio
+verdaccio
+```
+In a new terminal:
+1. Add user
+```sh
+npm adduser --registry http://localhost:4873/
+username: admin
+password: ****
+email: test@gmail.com
+```
+2. Publish
+```sh
+npm run build
+npm publish --registry http://localhost:4873/
+```
+3. Install and test
+```sh
+npm install -g clyph --registry http://localhost:4873
+```
+4. To unpublish
+```sh
+npm unpublish clyph --registry http://localhost:4873 --force
+```
+
+---
+
+## 6. Install Globally (for users)
 
 After publishing, users can install globally with:
 ```sh
@@ -143,7 +174,7 @@ clyph
 
 ---
 
-## 6. Notes
+## 7. Notes
 
 - **.npmignore**: Use this file to exclude everything except `dist/`, `package.json`, `README.md`, and other essentials.
 - **Versioning**: Bump the version in `package.json` before each publish.
